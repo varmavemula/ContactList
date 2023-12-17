@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/CSS/home.css">
+        <script src="https://kit.fontawesome.com/fc285ecd15.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        
+
+        <h1 id="heading"><i class="fa-solid fa-address-book"></i> My Contacts</h1>
+    
+        <div>
+            <ul id="list">
+                <% for(let i of Contact_list){%>
+                    <li id="item">
+                        <div class="contact_item">
+                            <p><%= i.name %></p> 
+                            <p><%= i.phone %></p> 
+                        </div>
+                    </li>
+                <%}%>
+            </ul>
+        </div>
+        <div>
+            <button type="button" id="myButton"><h2>Create New Contact</h2></button>
+        </div>
+
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function () {
+                location.href = "/ContactList";
+            };
+        </script>
+        <script type="text/javascript" src="/js/home.js"></script>
+    </body>
+    
+</html>
