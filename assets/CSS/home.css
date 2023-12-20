@@ -1,32 +1,65 @@
 body{
     margin: 0px;
     font-family: sans-serif;
+    text-align: center;
 }
 
 #heading{
     color: gray;
     margin-top: 25px;
-    text-align: center;
+    /* text-align: center; */
 }
 
-#list{
-     border: 2px solid black;
-     display:flex; 
-     width: 50%;
-    margin-left: 25%;
-    padding: 0; 
-    align-items: flex-start;
-    flex-direction:column;
-} 
-
-.Contact_item{
-    background-color: blue;
+#contact{
+    list-style: none;
+    padding: 3px 10px;
+    border: 1px solid white;
+    background-color: rgba(12, 31, 238, 0.7);
+    box-shadow: 1px 1px 1px 1px lightgrey;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    color: white;
-    font-size: 20px;
-    margin: 0%;
-    padding: 0%;
-    padding-left: 5px;
+    justify-content: space-around;
+    width: 70%;
+    margin-left: 15%;
+    box-sizing: border-box;
+    border-radius: 5px;
+} 
+
+@media screen and (min-width:480px) {
+    #contact{
+        width: 40%;
+        margin-left: 30%;
+    }
+    
 }
+#contact>i{
+    padding-top: 15px;
+}
+#contact .details{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    /* border: 1px solid black; */
+     
+}
+
+.delete-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    
+}
+.delete-button i{
+    color: red;
+    background-color: white;
+    font-size: 1.25rem;
+}
+
+#myButton{
+    border-radius: 10px;
+}
+
+

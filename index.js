@@ -34,7 +34,7 @@ app.get('/', function(req, res){
     return res.render('home', {title : 'Home', Contact_list: contactList});
 });
 
-app.get('/ContactList', function(req, res){
+app.get('/CreateContact', function(req, res){
     return res.render('Contact',  {
         title: 'Creat_Contact'
     });
@@ -45,6 +45,15 @@ app.post('/new_Contact', function(req,res){
    return res.redirect('/');
 });
 
+app.get('/deleteContact/', function(req,res){
+    const contactIndex = contactList.findIndex(contact=>contact.phone==req.query.phone);
+    if(contactIndex!=-1){
+        contactList.splice(contactIndex,1);
+    }
+    return res.redirect('back');
+});
+
+//To create a server
 app.listen(port, function(err){
     if(err) console.log("Error in running the server", err);
     else console.log("yep! the server is up and running on port", port);
