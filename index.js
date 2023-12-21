@@ -4,7 +4,7 @@ const port = 4000;
 
 const db = require('./config/mongoose');
 const app = express();
-
+const contactdb = require('./models/Contact');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
