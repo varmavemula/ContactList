@@ -42,8 +42,14 @@ app.get('/CreateContact', function(req, res){
 
 app.post('/new_Contact', function(req,res){
    contactList.push(req.body);
-   return res.redirect('/');
+   contactdb.create({
+    phone:req.body.phone,
+    name:req.body.name
 });
+return res.redirect('/');
+});
+   
+
 
 app.get('/deleteContact/', function(req,res){
     const contactIndex = contactList.findIndex(contact=>contact.phone==req.query.phone);
