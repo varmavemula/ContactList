@@ -17,22 +17,17 @@
                     <li id="contact">
                         <i class="fas fa-user"></i>
                         <div class="details">
-                            
                             <p><%= i.name %></p> 
                             <p><%= i.phone %></p> 
                         </div>
                         <div class="delete-button">
-                            <a href="/deleteContact/?phone=<%= i.phone%>">
+                            <a href="/deleteContact/?id=<%= i._id%>">
                                 <i class="fas fa-window-close"></i>
                             </a>
                         </div>
-                        
                     </li>
-                    
                 <%}%>
-                
             </ul>
-            
         </div>
         <div>
             <button type="button" id="myButton"><h2>Create New Contact</h2></button>
