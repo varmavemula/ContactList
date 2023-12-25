@@ -31,18 +31,14 @@ var contactList = [
 
 app.get('/', function(req, res){
     const queryObject = contactdb.find({});
-   // const query = Contact.find({});
-
-// Execute the query and handle the results using promises
-queryObject.then((contacts) => {
-  
-  console.log('Contacts:', contacts);
-  return res.render('home', {title : 'Home', Contact_list: contacts});
-}).catch((err) => {
-  console.error('Error retrieving contacts:', err);
-});
-   
-});
+    // Execute the query and handle the results using promises
+    queryObject.then((contacts) => {
+            // console.log('Contacts:', contacts);
+            return res.render('home', {title : 'Home', Contact_list: contacts});
+        }).catch((err) => {
+            console.error('Error retrieving contacts:', err);
+        });
+    });
 
 app.get('/CreateContact', function(req, res){
     return res.render('Contact',  {
@@ -63,8 +59,9 @@ return res.redirect('/');
 
 app.get('/deleteContact', function(req,res){
    let  id= req.query.id;
-   contactdb.findByIdAndDelete(id);
-    return res.redirect('/');
+   contactdb.findByIdAndDelete(id).then(()=>{
+    return res.redirect('back');
+});
 });
 
 //To create a server
